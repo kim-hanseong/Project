@@ -1,15 +1,3 @@
-/* ===== 변수 정의 ===== */
-:root {
-  --text-primary: #1a1a1a;
-  --text-secondary: #6b7280;
-  --bg-surface: #ffffff;
-  --border-color: #e5e7eb;
-  --highlight: #3b82f6;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
-
 /* ===== 메인 섹션 스타일 ===== */
 .heroSection {
   padding: 40px 0;

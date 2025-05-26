@@ -1,20 +1,4 @@
 /* ===== 변수 정의 ===== */
-:root {
-  --text-primary: #1a1a1a;
-  --text-secondary: #6b7280;
-  --bg-surface: #ffffff;
-  --border-color: #e5e7eb;
-  --highlight: #3b82f6;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --product-addshop-button-w: 96px;
-  --product-addshop-button-h: 36px;
-  --color-white: #ffffff;
-  --product-contents-size: 0.875rem;
-  --delivery-complete: #10b981;
-  --delivery-pending: #f59e0b;
-}
-
-/* ===== 레이아웃 및 컨테이너 ===== */
 .Container {
   flex: 1;
   display: flex;

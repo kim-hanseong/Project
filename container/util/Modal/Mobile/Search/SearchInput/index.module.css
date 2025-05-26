@@ -30,7 +30,7 @@
 }
 
 /* input 포커스 시 테두리 제거 */
-input:focus {
+.Input:focus {
   outline: none;
   box-shadow: none;
 }

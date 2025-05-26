@@ -3,8 +3,33 @@
 @tailwind utilities;
 
 :root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --bg-surface: #ffffff;
+  --border-color: #e5e7eb;
+  --highlight: #3b82f6;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --text-primary: #020202;
+  --text-secondary: #6b7280;
+  --bg-surface: #ffffff;
+  --border-color: #e5e7eb;
+  --highlight: #3b82f6;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
   --Book--ratio: 152 / 219.79;
-
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --bg-surface: #ffffff;
+  --border-color: #e5e7eb;
+  --highlight: #3b82f6;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --product-addshop-button-w: 96px;
+  --product-addshop-button-h: 36px;
+  --color-white: #ffffff;
+  --product-contents-size: 0.875rem;
+  --delivery-complete: #10b981;
+  --delivery-pending: #f59e0b;
   --color--cancel: #1e3768;
   --color-white: #ffffff;
   --color-black: #000000;
