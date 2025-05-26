@@ -1,5 +1,5 @@
+import React from "react";
 import { IoIosArrowUp } from "react-icons/io";
-import { IconBaseProps } from "react-icons";
 
 import styles from "@/components/bestseller/bestseller-Category-Select/Desktop/index.module.css";
 import PopButton from "@/components/전역/PopButton";
@@ -12,10 +12,6 @@ interface BestSellerCategoryProps {
   categoryList: CategoryItem[]; // CATEGORY_LIST를 인수로 받을 타입
   handleCategoryChange: (category: string) => void; // 카테고리 변경 핸들러 타입
 }
-
-const IconWrapper = (props: IconBaseProps) => {
-  return <IoIosArrowUp {...props} />;
-};
 
 const BestSellerDesktopCategor: React.FC<BestSellerCategoryProps> = ({
   props,
@@ -46,7 +42,7 @@ const BestSellerDesktopCategor: React.FC<BestSellerCategoryProps> = ({
       ButtonTrigger={<>{props}</>}
       ButtonIcons={
         <span>
-          <IconWrapper />
+          <IoIosArrowUp />
         </span>
       }
       ButtonContent={<RenderCategory />}
