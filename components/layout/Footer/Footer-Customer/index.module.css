@@ -1,0 +1,6 @@
+.Tool {
+  height: 100%;
+}
+.Tool > * {
+  color: var(--color-blue-dark2);
+}

@@ -1,0 +1,6 @@
+.categoryList {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-gray-3);
+}
