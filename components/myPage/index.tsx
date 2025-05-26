@@ -12,10 +12,10 @@ import UserInfo from "./myPage-Info/UserInfo";
 
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
 import { useShopList } from "@/Hook/Data/useShopList";
-import { useMountLoginCheck } from "@/Hook/Data/useMountLoginCheck";
+import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function MyPage() {
-  useMountLoginCheck(); // 로그인 안되어 있으면 모달이 뜸
+  useRequireAuth();
 
   const { orderList, orderNumbers } = useMyPage();
   const { shopList, numbers } = useShopList();

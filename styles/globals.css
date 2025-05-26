@@ -3,174 +3,252 @@
 @tailwind utilities;
 
 :root {
-  --choiceprimary-color: #3c3c3c;
-  --choiceaccent-color: #6366f1;
-  --choicebg-color: #ffffff;
-  --choiceborder-color: #e5e7eb;
-  --choicetext-color: #111827;
-  --choicemuted-text-color: #6b7280;
-  --choiceerror-color: #ef4444;
-  --text-secondary: #6b7280;
-  --bg-surface: #ffffff;
+  /* Primary Colors */
+  --primary-color: #3c3c3c;
+  --accent-color: #6366f1;
+  --bg-color: #ffffff;
   --border-color: #e5e7eb;
-  --highlight: #3b82f6;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --text-primary: #020202;
-  --text-secondary: #6b7280;
+  --text-color: #111827;
+  --muted-text-color: #6b7280;
+  --error-color: #ef4444;
+
+  /* Brand Colors */
+  --brand-primary: #1e3768;
+  --brand-secondary: #152a4f;
+  --brand-accent: #3b82f6;
+
+  /* Background Colors */
   --bg-surface: #ffffff;
-  --border-color: #e5e7eb;
-  --highlight: #3b82f6;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-  --Book--ratio: 152 / 219.79;
+  --bg-muted: #f9fafb;
+  --bg-hover: #f3f4f6;
+
+  /* Text Colors */
   --text-primary: #1a1a1a;
   --text-secondary: #6b7280;
-  --bg-surface: #ffffff;
-  --border-color: #e5e7eb;
-  --highlight: #3b82f6;
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --product-addshop-button-w: 96px;
-  --product-addshop-button-h: 36px;
-  --color-white: #ffffff;
-  --product-contents-size: 0.875rem;
-  --delivery-complete: #10b981;
-  --delivery-pending: #f59e0b;
-  --color--cancel: #1e3768;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-black-rgb: 0, 0, 0;
-  --color-gray-89: #898989;
+  --text-muted: #9ca3af;
+
+  /* Border Colors */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-dark: #9ca3af;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+
+  /* Component Specific Colors */
+  --choice-primary: #3c3c3c;
+  --choice-accent: #6366f1;
+  --choice-bg: #ffffff;
+  --choice-text: #111827;
+  --choice-muted-text: #6b7280;
+  --choice-error: #ef4444;
+
+  /* Gray Scale */
   --color-gray-1: #111111;
   --color-gray-2: #232323;
   --color-gray-3: #333333;
-  --color-gray-6: #666666;
   --color-gray-4: #4c4c4c;
-  --color-gray-4-rgb: 76, 76, 76;
-  /* Minimum WCAG AA Pass */
+  --color-gray-6: #666666;
   --color-gray-8: #8c8c8c;
-  /* Fail to WCAG AA */
-  --color-gray-9: #6e6d6d29;
+  --color-gray-9: #6e6d6d;
   --color-gray-a: #aaaaaa;
   --color-gray-c: #cccccc;
   --color-gray-d: #dddddd;
   --color-gray-e: #eeeeee;
   --color-gray-f: #f6f6f6;
-  --color-gray-f: rgba(156 163 175 1);
 
-  --color-bg: #f6f6f6;
+  /* Brand Colors */
   --color-blue: #0071f0;
-  --color-blue2: #0c6eaf;
-  /* Minimum WCAG AA Pass */
   --color-blue-dark: #0053b3;
-  --color-blue-dark2: #005bac;
   --color-red: #eb0d00;
-  /* Minimum WCAG AA Pass */
-  --color-red-rgb: 235, 13, 0;
   --color-orange: #ff9500;
   --color-yellow: #ffcc00;
   --color-green: #26873e;
-  /* Minimum WCAG AA Pass */
   --color-teal: #5ac8fa;
   --color-indigo: #5856d6;
   --color-purple: #af52de;
   --color-pink: #ff2d55;
-  --test: 
-  /* modal bg */
-  /* p */ --color-em: #ff59e3;
-  /*** Focus-componenets  /***
-  /*  */
-  --background-dark: #121212;
-  --text-primary: #ffffff; /* 기본 텍스트 색상 - 밝은 색상 */
-  --text-secondary: #b3b3b3; /* 서브 텍스트 색상 - 중간 밝기 */
-  --text-emphasis: #ffcc00; /* 강조 텍스트 색상 - 눈에 띄는 색상 */
-  --focus-border-solid: #cccccc;
 
-  --focus-authors-size: 1.1vw;
-  --focus-publisher-size: 0.89vw;
-
-  --focus-book-review: 0.89vw;
-
-  /*** best-seller-componenets  /***
-  /* best-seller-category-color */
-  --modal-bg: rgba(88, 88, 88, 0.5);
-  --modal-bg1: rgba(31, 31, 31, 0.5);
-  --modal-bg2: #424242;
-  --modal-bg3: #f0f0f0;
-  --close-btn: #b0b0b0;
-  --best-seller-category-bg-color: #e8ba7d;
-  --best-seller-category-bg-focus-color: #ffe2ad;
-  --best-seller-category-text-color: #100202;
-  --best-seller-category-hover-color: #dfcdac;
-  /* best-seller-category-size */
-  --best-seller-category-li-size: 140px;
-  /* best-seller-pagesize-tool */
-  --best-seller-pageSize-color: 240 5.26% 26.08%;
-  --best-seller-pageSize-hover-color: #b3c0da; /* 
-
-  /*** best-seller-componenets  /***
-  /* product color */
+  /* Component Specific */
   --product-thumbnail-color: #eaeaea;
   --product-contents-color: #cbcbcb;
   --product-authors: #b5b5b5;
   --product-percentage: #57586c;
   --product-price: #fff;
   --product-icons-color: #c5c5c5;
-  /* product fontSize */
-  --product-thumnail-size: 9rem;
+
+  /* Sizes */
+  --product-thumbnail-size: 9rem;
   --product-contents-size: 12px;
   --product-icons-size: 11px;
-
-  /*** util Button Color ***/
-  /* Tag */
-  --Tag: #a9b5f1;
-  /* add */
-  --product-addshop-button: #ea9d9f;
-  --product-addshop-button-hover: #f6acad;
   --product-addshop-button-w: 110px;
   --product-addshop-button-h: 38px;
-  /* buy */
-  --product-shop-button: #879ec8;
-  --product-shop-button-hover: #a3bef1;
   --product-shop-button-w: 110px;
   --product-shop-button-h: 38px;
-  /* pagination */
+
+  /* Button Colors */
+  --product-addshop-button: #ea9d9f;
+  --product-addshop-button-hover: #f6acad;
+  --product-shop-button: #879ec8;
+  --product-shop-button-hover: #a3bef1;
   --best-seller-pagination-btn-bg: #ffbdad;
   --best-seller-pagination-focus-btn-bg: #ff8ca5;
 
-  /* best-seller-componenets end*/
+  /* Modal Colors */
+  --modal-bg: rgba(88, 88, 88, 0.5);
+  --modal-bg1: rgba(31, 31, 31, 0.5);
+  --modal-bg2: #424242;
+  --modal-bg3: #f0f0f0;
+  --close-btn: #b0b0b0;
 
-  /* Sizes */
-  --w-idol-m: 132px;
-  --w-idol: 140px;
-  --h-idol: 220px;
-  --h-nav: 44px;
-  --h-footer: 32px;
-  --x-scroll-aid: 52px;
+  /* Best Seller Colors */
+  --best-seller-category-bg: #e8ba7d;
+  --best-seller-category-bg-focus: #ffe2ad;
+  --best-seller-category-text: #100202;
+  --best-seller-category-hover: #dfcdac;
+  --best-seller-category-li-size: 140px;
+  --best-seller-pageSize-color: 240 5.26% 26.08%;
+  --best-seller-pageSize-hover: #b3c0da;
 
-  --Percentage-color: #906ffd; /* 차분한 블루 */
-  --secondary-color: #868686; /* 연한 그레이 */
-  --ther-color: #767676; /* 연한 그레이 */
-  --background-color: #ffffff; /* 흰색 배경 */
-  --text-color: #fec7c8; /* 진한 회색 텍스트 */
-  --highlight-color: #dde6f6;
+  /* Focus Components */
+  --focus-authors-size: 1.1vw;
+  --focus-publisher-size: 0.89vw;
+  --focus-book-review: 0.89vw;
+  --focus-border-solid: #cccccc;
 
-  --main-Shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  /* Dark Mode */
+  --background-dark: #121212;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #b3b3b3;
+  --text-emphasis-dark: #ffcc00;
+
+  /* Other */
+  --main-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --progressText: rgba(0, 0, 0, 0.06);
+  --progress-text: rgba(0, 0, 0, 0.06);
   --rating-bg: #f7f7f7;
-  --border-color: #dcdcdc;
-  --pink-Btn: background-image: linear-gradient(to top right, #ffbdad, #f6b6c5);
-  --Info-bg: #f7f7f7 --color;
+  --info-bg: #f7f7f7;
   --border-line: #e0e0e0;
   --comment-color: #292929;
-
   --next-ui-border: rgba(17, 17, 17, 0.15);
   --percentage: #4dac27;
-  --Select-btn: #595959;
+  --select-btn: #595959;
+  --page-size-bg: #f7f7f7;
+}
 
-  /* pagesize */
-  --PageSize-bg: #f7f7f7;
-  --border-color: #d5d5d5;
-  --text-primary: #1a1a1a;
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  line-height: 1.5;
+}
+
+/* Common Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+/* Button Styles */
+.btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-secondary);
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+/* Form Styles */
+.input {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-accent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+  }
 }
