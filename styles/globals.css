@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --text-primary: #1a1a1a;
   --text-secondary: #6b7280;
   --bg-surface: #ffffff;
   --border-color: #e5e7eb;
@@ -166,4 +165,5 @@
   /* pagesize */
   --PageSize-bg: #f7f7f7;
   --border-color: #d5d5d5;
+  --text-primary: #1a1a1a;
 }

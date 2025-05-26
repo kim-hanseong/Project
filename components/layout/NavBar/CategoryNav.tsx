@@ -3,8 +3,11 @@ import { usePathname } from "next/navigation";
 
 import styles from "./CategoryNav.module.css";
 
+import { useLogout } from "@/Hook/Data/useLogOut";
+
 const CategoryNav = () => {
   const pathname = usePathname();
+  const { handleLogout } = useLogout();
 
   const categories = [
     { name: "베스트", path: "/bestseller" },
@@ -27,6 +30,9 @@ const CategoryNav = () => {
             {category.name}
           </Link>
         ))}
+        <button onClick={handleLogout} className={styles.logoutButton}>
+          로그아웃
+        </button>
       </div>
     </nav>
   );

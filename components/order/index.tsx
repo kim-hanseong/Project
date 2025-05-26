@@ -31,10 +31,10 @@ import ChoiceAddressModal from "@/container/util/Modal/Order/Address/choiceAddre
 import AddressInputModal from "@/container/util/Modal/Order/Address/InputAddress";
 import AddressInfoInputModal from "@/container/util/Modal/Order/Address/addAddress";
 import TopPriceWrap from "@/container/util/Modal/공용/PriceWrap/DeskTop";
-import { useMountLoginCheck } from "@/Hook/Data/useMountLoginCheck";
+import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function OrderPage() {
-  useMountLoginCheck();
+  useRequireAuth();
   const { shopList, numbers, isFetched } = useShopList();
   const { address, recentAddress } = useAddressUserInfo();
   const [search, setSearch] = useState("");

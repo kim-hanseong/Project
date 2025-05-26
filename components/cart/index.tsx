@@ -10,15 +10,16 @@ import CartPrecaution from "./cart-Precautions";
 
 import { useShopList } from "@/Hook/Data/useShopList";
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
-import { useMountLoginCheck } from "@/Hook/Data/useMountLoginCheck";
 import TopPriceWrap from "@/container/util/Modal/공용/PriceWrap/DeskTop";
 import MobilePriceWrap from "@/container/util/Modal/공용/PriceWrap/Mobile";
+import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function CartPage() {
-  useMountLoginCheck();
   const { shopList, numbers, handleIncrease, handleDecrease, handleDelete } =
     useShopList();
   const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
+
+  useRequireAuth();
 
   return (
     <>
