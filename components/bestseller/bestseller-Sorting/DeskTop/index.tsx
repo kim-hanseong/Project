@@ -40,7 +40,7 @@ const BestSellerDesktopSorting: React.FC<BestSellerCategoryProps> = ({
       value={`정렬순서 보기`}
       className={styles.TriggerBtn}
       ButtonTrigger={<span>{props}</span>}
-      ButtonIcons={<IoIosArrowUp />}
+      // ButtonIcons={<IoIosArrowUp />}
       ButtonContent={<RenderSorting />}
       down={true}
     />

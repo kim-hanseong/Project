@@ -138,7 +138,7 @@
 .AddBtn > span,
 .BuyBtn > span {
   font-size: 12px;
-  color: var(--color-white);
+  color: #fff;
   font-weight: 600;
 }
 

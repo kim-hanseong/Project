@@ -39,7 +39,7 @@ const BestSellerDesktopPageSize: React.FC<BestSellerCategoryProps> = ({
       value={`${pageSize} 개씩 보기`}
       className={styles.TriggerBtn}
       ButtonTrigger={<span>{props} 개씩 보기</span>}
-      ButtonIcons={<IoIosArrowUp />}
+      // ButtonIcons={<IoIosArrowUp />}
       ButtonContent={<RenderPageSize />}
       down={true}
     />
