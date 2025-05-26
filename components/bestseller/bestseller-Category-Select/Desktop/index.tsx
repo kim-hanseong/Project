@@ -39,7 +39,11 @@ const BestSellerDesktopCategor: React.FC<BestSellerCategoryProps> = ({
       value={`카테고리변경`}
       className={styles.TriggerBtn}
       ButtonTrigger={<>{props}</>}
-      ButtonIcons={<IoIosArrowUp />}
+      ButtonIcons={
+        <>
+          <IoIosArrowUp />
+        </>
+      }
       ButtonContent={<RenderCategory />}
       down={true}
     />
