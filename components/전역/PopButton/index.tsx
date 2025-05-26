@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { forwardRef } from "react"; // React를 가져오기
 import { useState } from "react";
+import { IconType } from "react-icons";
 
 import styles from "@/components/전역/PopButton/index.module.css";
 import useOutsideClickHandler from "@/Hook/Ref/useOutSide";

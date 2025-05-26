@@ -40,9 +40,9 @@ const BestSellerDesktopCategor: React.FC<BestSellerCategoryProps> = ({
       className={styles.TriggerBtn}
       ButtonTrigger={<>{props}</>}
       ButtonIcons={
-        <>
+        <span>
           <IoIosArrowUp />
-        </>
+        </span>
       }
       ButtonContent={<RenderCategory />}
       down={true}
