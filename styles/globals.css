@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 :root {
+  --choiceprimary-color: #3c3c3c;
+  --choiceaccent-color: #6366f1;
+  --choicebg-color: #ffffff;
+  --choiceborder-color: #e5e7eb;
+  --choicetext-color: #111827;
+  --choicemuted-text-color: #6b7280;
+  --choiceerror-color: #ef4444;
   --text-secondary: #6b7280;
   --bg-surface: #ffffff;
   --border-color: #e5e7eb;

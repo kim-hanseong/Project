@@ -30,7 +30,7 @@
   height: 100%;
 }
 
-input:focus {
+.Input:focus {
   outline: none;
   box-shadow: none;
 }
