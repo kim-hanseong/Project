@@ -1,4 +1,4 @@
-import { IoIosArrowUp } from "react-icons/io";
+import * as IoIosArrowUp from "react-icons/io";
 
 import styles from "@/components/bestseller/bestseller-Category-Select/Desktop/index.module.css";
 import PopButton from "@/components/전역/PopButton";
@@ -39,11 +39,11 @@ const BestSellerDesktopCategor: React.FC<BestSellerCategoryProps> = ({
       value={`카테고리변경`}
       className={styles.TriggerBtn}
       ButtonTrigger={<>{props}</>}
-      // ButtonIcons={
-      //   <span>
-      //     <IoIosArrowUp />
-      //   </span>
-      // }
+      ButtonIcons={
+        <span>
+          <IoIosArrowUp.IoIosArrowUp />
+        </span>
+      }
       ButtonContent={<RenderCategory />}
       down={true}
     />
