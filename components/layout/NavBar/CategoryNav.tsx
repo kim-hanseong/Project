@@ -13,7 +13,6 @@ const CategoryNav = () => {
     { name: "베스트", path: "/bestseller" },
     { name: "Top10", path: "/orderSales" },
     { name: "추천", path: "/recommend" },
-    { name: "이벤트", path: "/event" },
   ];
 
   return (

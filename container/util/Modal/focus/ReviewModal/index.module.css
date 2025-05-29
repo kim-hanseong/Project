@@ -34,6 +34,7 @@
 /* 4. 리뷰 입력 섹션 */
 .ReviewTool {
   margin-bottom: 24px;
+  border: 1px solid black;
 }
 
 .ReviewTextArea {

@@ -78,8 +78,7 @@
   --color-gray-d: #dddddd;
   --color-gray-e: #eeeeee;
   --color-gray-f: #f6f6f6;
-
-  /* Brand Colors */
+  --color-white: #fff; /* Brand Colors */
   --color-blue: #0071f0;
   --color-blue-dark: #0053b3;
   --color-red: #eb0d00;

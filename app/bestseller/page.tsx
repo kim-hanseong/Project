@@ -1,15 +1,14 @@
 "use client";
-
-//* child components *
 import BestSellerPage from "@/components/bestseller";
+//* child components *
 import Layout from "@/components/layout/LayOut";
 
-const Index: React.FC = () => {
+function Page() {
   return (
     <Layout>
       <BestSellerPage />
     </Layout>
   );
-};
+}
 
-export default Index;
+export default Page;

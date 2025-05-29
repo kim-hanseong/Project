@@ -33,6 +33,5 @@
   background-color: var(--secondary-color);
 
   /* Typography */
-  color: var(--color-white); /* 밝은 텍스트 색상 */
   font-weight: 600;
 }

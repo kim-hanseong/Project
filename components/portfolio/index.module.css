@@ -1,0 +1,287 @@
+.container {
+  margin-bottom: 3rem;
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.techList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .techList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .techList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.slideOut {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.techCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.techCard:hover {
+  transform: translateY(-0.5rem) rotate(1deg) scale(1.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.techCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-200%);
+  transition: transform 1s;
+}
+
+.techCard:hover::before {
+  transform: translateX(200%);
+}
+
+.iconWrapper {
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+
+.techCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Next.js 아이콘 */
+.techCard .icon[data-icon="nextjs"] {
+  color: #000000;
+}
+
+/* React 아이콘 */
+.techCard .icon[data-icon="react"] {
+  color: #61dafb;
+}
+
+/* TypeScript 아이콘 */
+.techCard .icon[data-icon="typescript"] {
+  color: #3178c6;
+}
+
+/* Tailwind CSS 아이콘 */
+.techCard .icon[data-icon="tailwind"] {
+  color: #06b6d4;
+}
+
+/* Supabase 아이콘 */
+.techCard .icon[data-icon="supabase"] {
+  color: #3ecf8e;
+}
+
+/* Recoil 아이콘 */
+.techCard .icon[data-icon="recoil"] {
+  color: #3578e5;
+}
+
+.techCard:hover .icon {
+  color: inherit;
+}
+
+.techInfo {
+  flex: 1;
+}
+
+.techName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.techCard:hover .techName {
+  color: #2563eb;
+}
+
+.techDescription {
+  color: #4b5563;
+  transition: color 0.3s;
+}
+
+.techCard:hover .techDescription {
+  color: #1f2937;
+}
+
+.techDetail {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .techDetail {
+    width: 50%;
+  }
+}
+
+.slideIn {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.backButton {
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.backButton:hover {
+  color: #2563eb;
+}
+
+.backArrow {
+  margin-right: 0.5rem;
+}
+
+.detailIcon {
+  transform: scale(1.25);
+}
+
+.detailTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.detailDescription {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.detailFeatures {
+  margin-top: 1rem;
+}
+
+.featuresTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.featuresList {
+  list-style-type: disc;
+  list-style-position: inside;
+  color: #4b5563;
+}
+
+.featureItem {
+  margin-bottom: 0.5rem;
+}
+
+.selectedCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 400px;
+}
+
+.examples {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.examplesTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.example {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+}
+
+.exampleTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.exampleDescription {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.codeBlock {
+  background-color: #1f2937;
+  color: #e5e7eb;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  overflow-x: auto;
+  font-family: "Fira Code", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.codeBlock code {
+  white-space: pre;
+}

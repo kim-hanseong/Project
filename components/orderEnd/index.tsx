@@ -7,10 +7,10 @@ import OrderEndWrap from "./orderEnd-Wrap";
 import useOrderSubmitEffect from "./Hook/useOrderEnd";
 
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
-import { useMountLoginCheck } from "@/Hook/Data/useMountLoginCheck";
+import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function OrderEndPage() {
-  useMountLoginCheck();
+  useRequireAuth();
   useOrderSubmitEffect();
   const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
 

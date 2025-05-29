@@ -31,7 +31,7 @@ export type LoadingStateType = {
   isOpen: boolean;
 };
 
-type CommentType = {
+export type CommentType = {
   slug: string;
   rating: number;
 };

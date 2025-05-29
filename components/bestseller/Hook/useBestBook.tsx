@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
+import { LoadingAtom } from "../../Recoil/Loading/atom";
 
 import { BestSellerState, BestSellerResult, BestSellerActions } from "../types";
 
 import { useBestSellerData } from "./useBestSellerData";
 import { useBestSellerCategory } from "./useBestSellerCategory";
 
-import { LoadingAtom } from "@/components/Recoil/Loading/atom";
 const useBookFetchDataPagenation = (
   initialState: BestSellerState
 ): BestSellerResult & BestSellerActions => {
