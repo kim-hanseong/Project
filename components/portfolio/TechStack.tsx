@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, forwardRef } from "react";
 import { FaReact, FaAtom } from "react-icons/fa";
 import { SiTypescript, SiNextdotjs, SiSupabase } from "react-icons/si";
 import styles from "./index.module.css";
@@ -23,11 +23,13 @@ const TechStack: React.FC & {
     onTechClick: (tech: Technology) => void;
     selectedTech: Technology | null;
   }>;
-  TechDetail: React.FC<{
-    tech: Technology;
-    onBackClick: () => void;
-    showDetails: boolean;
-  }>;
+  TechDetail: React.ForwardRefExoticComponent<
+    {
+      tech: Technology;
+      onBackClick: () => void;
+      showDetails: boolean;
+    } & React.RefAttributes<HTMLDivElement>
+  >;
 } = () => {
   const [selectedTech, setSelectedTech] = useState<Technology | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -1154,7 +1156,7 @@ TechStack.TechList = ({ technologies, onTechClick, selectedTech }) => (
   </div>
 );
 
-TechStack.TechDetail = React.forwardRef<
+TechStack.TechDetail = forwardRef<
   HTMLDivElement,
   {
     tech: Technology;
