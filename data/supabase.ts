@@ -2,11 +2,11 @@
 import { createClient } from "@supabase/supabase-js";
 
 //* type *
-import { BookDataType, BooksData, ProductComment } from "@/types";
+import { BookDataType, BooksData } from "@/types";
 
 export const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
   {
     auth: {
       persistSession: true,
