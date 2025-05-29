@@ -1,45 +1,9 @@
-import React, {
-  useState,
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-} from "react";
-import { FaReact, FaNodeJs, FaAtom } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiSupabase,
-} from "react-icons/si";
+import React, { useState, useEffect, useRef } from "react";
+import { FaReact, FaAtom } from "react-icons/fa";
+import { SiTypescript, SiNextdotjs, SiSupabase } from "react-icons/si";
 import styles from "./index.module.css";
 import FlexBox from "@/components/전역/FlexBox";
 import TitleTag from "@/components/전역/TitleTag";
-import NextJS from "./next-js";
-import styled from "styled-components";
-import { useRecoilState } from "recoil";
-import { OnOffModal } from "@/atoms/OnOffModal";
-import { useMediaQuery } from "react-responsive";
-import { useBookFetchDataPagenation } from "@/hooks/useBookFetchDataPagenation";
-import { useInfiniteScroll } from "@/hooks/useInfiniteScroll";
-import MobileNavBarComponent from "@/components/MobileNavBarComponent";
-import MobileNavbar from "@/components/MobileNavbar";
-import MobileBottom from "@/components/MobileBottom";
-import ProductShopArlam from "@/components/ProductShopArlam";
-import SearchModal from "@/components/SearchModal";
-import { useErrorModal } from "@/hooks/useErrorModal";
-import { useAuth } from "@/contexts/AuthContext";
-import { Router, Route, Routes } from "react-router-dom";
-import { supabase } from "@/lib/supabase";
-import { getUser } from "@/lib/supabase";
-import { createContext as createReactContext } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { KakaoBookSearch } from "@/data/BookApi";
-import { Best_Book_DB, fetchPostBySlug } from "@/data/supabase";
-import { BookDataType } from "@/types";
-import { BestSellerParams } from "../types";
-import { useLoginCheck } from "@/Hook/Data/useUserCheck";
-
 interface Technology {
   name: string;
   icon: JSX.Element;

@@ -1,15 +1,11 @@
 import React from "react";
 import {
-  FaBook,
   FaSearch,
   FaUserFriends,
   FaChartLine,
   FaTruck,
-  FaSort,
-  FaList,
   FaLock,
   FaExclamationTriangle,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 const Features: React.FC = () => {

@@ -1,7 +1,6 @@
 "use client";
 
 import PortfolioLayout from "@/components/portfolio/PortfolioLayout";
-import Achievements from "@/components/portfolio/Achievements";
 import TechStack from "@/components/portfolio/TechStack";
 import Features from "@/components/portfolio/Features";
 import TechnicalDetails from "@/components/portfolio/TechnicalDetails";
@@ -17,7 +16,6 @@ export default function PortfolioPage() {
         <TechStack />
         <Features />
         <TechnicalDetails />
-        <Achievements />
       </div>
     </PortfolioLayout>
   );

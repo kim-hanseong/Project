@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  FaServer,
-  FaDatabase,
-  FaMobile,
-  FaShieldAlt,
-  FaCode,
-} from "react-icons/fa";
+import { FaDatabase, FaMobile, FaShieldAlt, FaCode } from "react-icons/fa";
 import styles from "./TechnicalDetails.module.css";
 
 const TechnicalDetails: React.FC = () => {
