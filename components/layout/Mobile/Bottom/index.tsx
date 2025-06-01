@@ -12,9 +12,9 @@ import useScrollNavbar from "@/Hook/Event/useScrollEvent";
 import { useResponsive } from "@/Hook/Responsive/useResponsive";
 //* 스타일 import *
 //* 컴포넌트 import *
-import FlexBox from "@/components/전역/FlexBox";
-import LinkIcon from "@/components/전역/Link-Icons";
-import ModalTrigger from "@/components/전역/Modal/ModalTrigger";
+import FlexBox from "@/components/common/FlexBox";
+import LinkIcon from "@/components/common/Link-Icons";
+import ModalTrigger from "@/components/common/Modal/ModalTrigger";
 import { ModalStateType } from "@/types";
 
 //  MobileBottom 컴포넌트

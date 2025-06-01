@@ -1,0 +1,174 @@
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 560px;
+  height: 720px;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.modalBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.addButton {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-muted);
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-sm);
+  transition: background 0.2s ease;
+}
+
+.addButton:hover {
+  background-color: var(--bg-hover);
+}
+
+.closeBtn {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.closeBtn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+}
+
+.cardContent > :first-child {
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+
+.defaultLabel {
+  padding: 4px 8px;
+  background-color: #eef2ff;
+  border-radius: 12px;
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.deletBtn {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.deletBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.submitBtn {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm);
+  background-color: var(--brand-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.submitBtn:hover {
+  background-color: var(--brand-secondary);
+}
+
+.replaceTool {
+  width: 100%;
+  padding: var(--spacing-lg);
+  background-color: var(--bg-muted);
+  border: 1px dashed var(--border-light);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+}
+
+.InfoTool {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+    border-radius: 0;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .addButton {
+    font-size: var(--text-sm);
+  }
+
+  .submitBtn {
+    font-size: var(--text-base);
+  }
+}

@@ -3,8 +3,8 @@ import FooterIntro from "./Footer-Intro";
 import FooterInfo from "./Footer-Info";
 import FooterCustom from "./Footer-Customer";
 
-import Component from "@/components/전역/컴포넌트구별/Component";
-import FlexBox from "@/components/전역/FlexBox";
+import Component from "@/components/common/컴포넌트구별/Component";
+import FlexBox from "@/components/common/FlexBox";
 import styles from "@/components/layout/Footer/index.module.css";
 
 const FooterComponent = () => {
@@ -22,16 +22,25 @@ const FooterComponent = () => {
   ];
 
   return (
-    <footer>
+    <footer aria-label="사이트 푸터" role="contentinfo">
       <Component className={styles.Footer}>
         <div className={styles.Component}>
-          <h1 className={styles.Header}>Books</h1>
+          <h1 className={styles.Header} aria-label="Books 서점">
+            Books
+          </h1>
           <FlexBox $justify="space-between" $col={true}>
-            <FlexBox $col={true} $justify="space-between">
-              <FooterInfo categoryList={COMPANY_INFO} />
-              <FooterIntro categoryList={COMPANY_INTRO} />
+            <FlexBox
+              $col={true}
+              $justify="space-between"
+              aria-label="회사 정보 및 이용약관"
+            >
+              <FooterInfo categoryList={COMPANY_INFO} aria-label="회사 정보" />
+              <FooterIntro
+                categoryList={COMPANY_INTRO}
+                aria-label="이용약관 및 정책"
+              />
             </FlexBox>
-            <FooterCustom />
+            <FooterCustom aria-label="고객 서비스" />
           </FlexBox>
         </div>
       </Component>

@@ -1,6 +1,6 @@
 "use client";
 import Layout from "@/components/layout/LayOut";
-import SearchListPage from "@/components/searchList";
+import SearchListPage from "@/components/pages/searchList";
 
 function Page(props: { params: { slug: string } }) {
   return (

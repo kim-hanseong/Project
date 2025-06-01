@@ -10,20 +10,20 @@ import { MdOutlineCancel } from "react-icons/md";
 
 import CategoryNav from "./CategoryNav";
 
-import { CustomPrice } from "@/container/product/Price";
-import LinkIcon from "@/components/전역/Link-Icons";
+import { CustomPrice } from "@/components/common/product/Price";
+import LinkIcon from "@/components/common/Link-Icons";
 import styles from "@/components/layout/NavBar/index.module.css";
-import Component from "@/components/전역/컴포넌트구별/Component";
+import Component from "@/components/common/컴포넌트구별/Component";
 import { useRecentSearch } from "@/Hook/Storage/useRecentSearchHook";
-import FlexBox from "@/components/전역/FlexBox";
-import { Thumbnail } from "@/container/product/Thumbnail";
-import { Title } from "@/container/product/Title";
-import { AuthList } from "@/container/product/AuthList";
-import TitleTag from "@/components/전역/TitleTag";
+import FlexBox from "@/components/common/FlexBox";
+import { Thumbnail } from "@/components/common/product/Thumbnail";
+import { Title } from "@/components/common/product/Title";
+import { AuthList } from "@/components/common/product/AuthList";
+import TitleTag from "@/components/common/TitleTag";
 import useBookApi from "@/Hook/Data/useBookApi";
 import { BookDataType } from "@/types";
-import { Content } from "@/container/product/Contents";
-import EmptyProduct from "@/components/전역/Empty";
+import { Content } from "@/components/common/product/Contents";
+import EmptyProduct from "@/components/common/Empty";
 
 // OrderMobileNavbar 컴포넌트
 const NavBar: React.FC & {
@@ -127,7 +127,9 @@ const NavBar: React.FC & {
 // 뒤로가기 버튼
 // 제목
 NavBar.Body = ({ children }) => (
-  <nav className={styles.navBarContainer}>{children}</nav>
+  <nav aria-label="메인 네비게이션" className={styles.navBarContainer}>
+    {children}
+  </nav>
 );
 
 NavBar.Logo = () => (
@@ -153,6 +155,8 @@ NavBar.SearchInput = ({
 }) => {
   return (
     <input
+      aria-label="도서 검색어 입력"
+      aria-controls="search-results recent-searches"
       type="text"
       placeholder="검색어를 입력해주세요"
       className={styles.Input}
@@ -189,6 +193,7 @@ NavBar.UtilBtn = () => (
   <FlexBox $gap={22} className={styles.IconsTool}>
     <LinkIcon
       Href="/cart"
+      aria-label="장바구니로 이동"
       ButtonIcons={
         <button className={styles.Icons}>
           <AiOutlineShoppingCart />
@@ -199,6 +204,7 @@ NavBar.UtilBtn = () => (
     />
     <LinkIcon
       Href="/myPage"
+      aria-label="마이페이지로 이동"
       ButtonIcons={
         <button className={styles.Icons}>
           <IoMdPerson />
@@ -212,6 +218,7 @@ NavBar.UtilBtn = () => (
 
 NavBar.RecentSearchBody = ({ children, visible }) => (
   <FlexBox
+    aria-label="최근 검색어"
     $col={true}
     className={`${styles.RecentSearchDropdown} ${visible ? styles.visible : ""}`}
   >
@@ -237,7 +244,12 @@ NavBar.RecentSearchList = ({ recent, Delete }) => (
 );
 
 NavBar.SearchListBody = ({ children }) => (
-  <FlexBox $col={true} $gap={7} className={styles.SearchListBody}>
+  <FlexBox
+    $col={true}
+    $gap={7}
+    className={styles.SearchListBody}
+    aria-label="검색 결과"
+  >
     {children}
   </FlexBox>
 );
@@ -248,6 +260,7 @@ NavBar.SearchList = ({ data, onHover }) => (
     {data.length > 0 ? (
       data.slice(0, 3).map((book, index) => (
         <div
+          role="article"
           className={styles.ProductTool}
           key={index}
           onMouseEnter={() => onHover(book)}
@@ -281,6 +294,7 @@ NavBar.SearchList = ({ data, onHover }) => (
         className={styles.Empty}
         message="검색 결과가 없습니다"
         submessage="다른 검색어를 입력해주세요"
+        aria-label="검색 결과가 존재하지않는는 상태"
       />
     )}
   </FlexBox>

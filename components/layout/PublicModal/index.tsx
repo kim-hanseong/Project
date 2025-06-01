@@ -1,12 +1,12 @@
 import { useRecoilState } from "recoil";
 
 import { ErrorModal } from "@/components/Recoil/Modal/ErrorModal/atom";
-import DataErrorModal from "@/container/util/Arlam/DataErrorModal";
+import DataErrorModal from "@/util/Arlam/DataErrorModal";
 //* child components *
-import LoadingModal from "@/container/util/Arlam/Loading";
-import LoginCheckModal from "@/container/util/Modal/Login";
-import RefErrorModal from "@/container/util/Arlam/ErrorModal";
-import DeleteErrorModal from "@/container/util/Arlam/DeleteErrorModal";
+import LoadingModal from "@/util/Arlam/Loading";
+import LoginCheckModal from "@/util/Modal/Login";
+import RefErrorModal from "@/util/Arlam/ErrorModal";
+import DeleteErrorModal from "@/util/Arlam/DeleteErrorModal";
 
 const PublicModal: React.FC = () => {
   const [errormodal] = useRecoilState(ErrorModal);

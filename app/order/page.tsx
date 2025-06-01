@@ -1,6 +1,6 @@
 "use client";
 import Layout from "@/components/layout/LayOut";
-import OrderPage from "@/components/order";
+import OrderPage from "@/components/pages/order";
 
 function Page() {
   return (

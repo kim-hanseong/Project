@@ -1,5 +1,5 @@
 "use client";
-import CartPage from "@/components/cart";
+import CartPage from "@/components/pages/cart";
 import Layout from "@/components/layout/LayOut";
 //* child components *
 

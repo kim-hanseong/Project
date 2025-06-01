@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import FlexBox from "@/components/전역/FlexBox";
+import FlexBox from "@/components/common/FlexBox";
 import styles from "@/components/layout/Footer/Footer-Intro/index.module.css";
 
 interface CategoryItem {
@@ -13,7 +13,7 @@ interface List {
 const FooterIntro: React.FC<List> = ({ categoryList }) => {
   return (
     <FlexBox>
-      <ul className={styles.categoryList}>
+      <ul role="navigation" className={styles.categoryList}>
         {categoryList.map((category, index) => (
           <li key={index} className={classNames(styles.categoryItem, {})}>
             <button className={styles.categoryButton}>{category.title}</button>

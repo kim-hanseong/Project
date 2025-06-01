@@ -25,6 +25,9 @@ const CategoryNav = () => {
             className={`${styles.categoryItem} ${
               pathname === category.path ? styles.active : ""
             }`}
+            role="menuitem"
+            aria-current={pathname === category.path ? "page" : undefined}
+            aria-label={`${category.name} 카테고리로 이동`}
           >
             {category.name}
           </Link>

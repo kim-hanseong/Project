@@ -42,16 +42,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user }}>
-      {/* <Modal
-        state={LoginCheckAralm}
-        setModalState={setLoginCheckAralm}
-        name="로그인체크 모달"
-      >
-        <LoginCheckArlam />
-      </Modal> */}
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
   );
 };
 

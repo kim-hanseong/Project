@@ -1,5 +1,5 @@
 "use client";
-import BestSellerPage from "@/components/bestseller";
+import BestSellerPage from "@/components/pages/bestseller";
 //* child components *
 import Layout from "@/components/layout/LayOut";
 

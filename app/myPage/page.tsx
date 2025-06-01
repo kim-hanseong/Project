@@ -1,7 +1,7 @@
 "use client";
 //* Recoil *
-import MyPage from "@/components/myPage";
 import Layout from "@/components/layout/LayOut";
+import MyPage from "@/components/pages/myPage";
 
 function Page() {
   return (

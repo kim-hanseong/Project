@@ -2,7 +2,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
 
-import MoveTopIcons from "../전역/MoveTopIcons";
+import MoveTopIcons from "../common/MoveTopIcons";
 
 import { AuthProvider } from "./User";
 import PublicModal from "./PublicModal";
