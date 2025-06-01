@@ -4,8 +4,9 @@ import { Input } from "@nextui-org/input";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
 
+import styles from "./index.module.css";
+
 import { SearchIcons } from "@/public/svg/Search-icons";
-import styles from "@/container/util/Modal/Order/Address/addAddress/index.module.css";
 // Recoil Atoms
 import Info from "@/components/common/Info";
 import ModalTrigger from "@/components/common/Modal/ModalTrigger";
