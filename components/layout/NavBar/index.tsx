@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { IoIosClose, IoMdPerson } from "react-icons/io";
-import Image from "next/image";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
@@ -24,6 +23,7 @@ import useBookApi from "@/Hook/Data/useBookApi";
 import { BookDataType } from "@/types";
 import { Content } from "@/components/common/product/Contents";
 import EmptyProduct from "@/components/common/Empty";
+import { Image } from "@nextui-org/react";
 
 // OrderMobileNavbar 컴포넌트
 const NavBar: React.FC & {
@@ -134,9 +134,7 @@ NavBar.Body = ({ children }) => (
 
 NavBar.Logo = () => (
   <LinkIcon
-    ButtonIcons={
-      <Image src="/Books.png" alt="Books Icon" width={104} height={104} />
-    }
+    ButtonIcons={<Image src="/Books.png" alt="Books Icon" width={104} />}
     className={styles.test}
     value="로고 홈 버튼"
     Href="/"

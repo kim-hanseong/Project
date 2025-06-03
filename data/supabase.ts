@@ -517,26 +517,32 @@ export const fetchPostBySlug = async (slug: string) => {
   }
   return data;
 };
+export type SortType = "최신순" | "별점높은순" | "별점낮은순";
 
 export const fetchPostBySlug2 = async (
   slug: string,
-  pageNumber: number,
-  pageSize: number
+  sort: SortType = "최신순"
 ) => {
-  const offset = (pageNumber - 1) * pageSize;
-  const { data, error } = await supabase
-    .from("posts")
-    .select("*")
-    .eq("slug", slug)
-    .order("created_at", { ascending: false })
-    .range(offset, offset + pageSize - 1);
+  let query = supabase.from("posts").select("*").eq("slug", slug);
+  console.log("가져옴");
+
+  // 정렬 조건 적용
+  if (sort === "최신순") {
+    query = query.order("created_at", { ascending: false });
+  } else if (sort === "별점높은순") {
+    query = query.order("rating", { ascending: false });
+  } else if (sort === "별점낮은순") {
+    query = query.order("rating", { ascending: true });
+  }
+
+  const { data, error } = await query;
 
   if (error) {
     throw new Error("Error fetching post.");
   }
+
   return data;
 };
-
 export const DeleteSlugDB = async (id: number) => {
   const { data, error } = await supabase.from("posts").delete().eq("id", id);
 

@@ -29,10 +29,19 @@ import SuccessAddCommentModal from "@/util/Modal/focus/result/SuccessCommentAddM
 import ShareModal from "@/util/Modal/ShareModal";
 import DeleteCommentModal from "@/util/Modal/focus/CommentsDeleteArlam";
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
+import FocusCommentSorting from "./focus-Select";
+import { useState } from "react";
+import { SortType } from "@/data/supabase";
 
 function FocusPage(props: { params: { slug: string } }) {
   // ** Modal
   const [modal] = useRecoilState(OnOffModal);
+  const [sorting, setSorting] = useState<SortType>("최신순");
+
+  const handleSortingChange = (form: string) => {
+    setSorting(form as SortType);
+  };
+
   const MODAL_COMPONENTS: {
     [key: string]: React.FC<{ data: BookDataType }>;
   } = {
@@ -72,9 +81,8 @@ function FocusPage(props: { params: { slug: string } }) {
     slug: decodedString,
   });
   //* 데이터 : 댓글  *
-  const { Comments } = useComments({
-    slug: decodedString,
-  });
+  const { Comments } = useComments({ slug: decodedString, sorting });
+
   //* Mobile
   const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
 
@@ -88,6 +96,11 @@ function FocusPage(props: { params: { slug: string } }) {
         <FocusBookInfo data={focusBook} />
         <FocusSimilarBookSlide data={simiralBook} name="비슷한 상품 slide" />
         <FocusReviewInfo comments={Comments} />
+        <FocusCommentSorting
+          productForm={sorting}
+          setProductForm={handleSortingChange}
+        />
+
         <FocusCommentsComponent props={Comments} />
         <FocusReturn />
         <FocusShareBtn />

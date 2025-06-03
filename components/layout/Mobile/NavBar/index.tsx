@@ -5,17 +5,16 @@ import { useRouter } from "next/navigation";
 import { useRecoilState } from "recoil";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-import TitleTag from "../../../common/TitleTag";
-
 import styles from "./index.module.css";
 
 //* 컴포넌트 import *
-import FlexBox from "@/components/common/FlexBox";
-import LinkIcon from "@/components/common/Link-Icons";
-import ModalTrigger from "@/components/common/Modal/ModalTrigger";
 import { OnOffModal } from "@/components/Recoil/Modal/OnOffModal/atom";
 import useScrollNavbar from "@/Hook/Event/useScrollEvent";
 import { ModalStateType } from "@/types";
+import TitleTag from "@/components/common/TitleTag";
+import FlexBox from "@/components/common/FlexBox";
+import LinkIcon from "@/components/common/Link-Icons";
+import ModalTrigger from "@/components/common/Modal/ModalTrigger";
 
 type MobileNavbarProps = {
   Title: string;
@@ -42,7 +41,6 @@ const MobileNavbar: React.FC<MobileNavbarProps> & {
       {mode === "full" && (
         <nav
           className={`${styles.NavbarContainer} ${isHidden && !isBgWhite ? styles.hidden : ""} ${isBgWhite ? styles.bgWhite : ""}`}
-          aria-label="모바일 네비게이션"
         >
           <FlexBox
             $justify="space-between"
@@ -65,7 +63,6 @@ const MobileNavbar: React.FC<MobileNavbarProps> & {
       {mode === "Base" && (
         <nav
           className={`${styles.NavbarContainer} ${isHidden && !isBgWhite ? styles.hidden : ""} ${isBgWhite ? styles.bgWhite : ""}`}
-          aria-label="모바일 네비게이션"
         >
           <FlexBox $justify="space-between" $align="center" className="w-full">
             <FlexBox className={styles.test}>
@@ -93,10 +90,9 @@ MobileNavbar.Title = ({ Title }) => (
 MobileNavbar.BackButton = () => (
   <LinkIcon
     Href="/bestseller"
-    ButtonIcons={<IoIosArrowBack aria-hidden="true" />}
+    ButtonIcons={<IoIosArrowBack />}
     className={styles.Icons}
-    value="뒤로가기"
-    aria-label="이전 페이지로 이동"
+    value="뒤로가기 아이콘"
   />
 );
 
@@ -104,10 +100,9 @@ MobileNavbar.BackButton = () => (
 MobileNavbar.HomeButton = () => (
   <LinkIcon
     Href="/"
-    ButtonIcons={<RiHome2Line aria-hidden="true" />}
+    ButtonIcons={<RiHome2Line />}
     className={styles.Icons}
-    value="홈으로 이동"
-    aria-label="홈으로 이동"
+    value="홈 이동 아이콘"
   />
 );
 
@@ -115,13 +110,13 @@ MobileNavbar.HomeButton = () => (
 MobileNavbar.SearchButton = ({ setModal }) => (
   <ModalTrigger
     ButtonComponent={
-      <button className={styles.Icons} aria-label="검색하기">
-        <IoSearch aria-hidden="true" />
+      <button className={styles.Icons}>
+        <IoSearch />
       </button>
     }
     setModalState={setModal}
     type="MobileSearchModal"
-    name="검색 모달 오픈"
+    name="검색 모달 오픈 아이콘"
   />
 );
 
@@ -129,10 +124,9 @@ MobileNavbar.SearchButton = ({ setModal }) => (
 MobileNavbar.CartButton = () => (
   <LinkIcon
     Href="/cart"
-    ButtonIcons={<AiOutlineShoppingCart aria-hidden="true" />}
+    ButtonIcons={<AiOutlineShoppingCart />}
     className={styles.Icons}
-    value="장바구니로 이동"
-    aria-label="장바구니로 이동"
+    value="장바구니 이동 아이콘"
   />
 );
 MobileNavbar.Title.displayName = "MobileNavbar.Title";
