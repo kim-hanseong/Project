@@ -10,7 +10,6 @@ import MobileNavbar from "../../layout/Mobile/NavBar";
 import MobileBottom from "../../layout/Mobile/Bottom";
 
 import useBookFetchDataPagenation from "./Hook/useBestBook";
-import BestSellerProduct from "./bestseller-Product";
 import BestSellerCategor from "./bestseller-Category-Select";
 import BestSellerPagiNation from "./bestseller-PagiNation";
 import BestSellerPageSize from "./bestseller-PageSize";
@@ -22,6 +21,7 @@ import useInfiniteScroll from "@/Hook/Event/useInfiniteScroll";
 import ProductShopArlam from "@/util/Modal/ShopModal";
 import SearchModal from "@/util/Modal/Mobile/Search";
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
+import BestSellerProduct from "./bestseller-Product";
 //* data *
 const BestSellerPage: React.FC = () => {
   const [productForm, setProductForm] = useState("Basis");
