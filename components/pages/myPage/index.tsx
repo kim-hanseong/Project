@@ -15,8 +15,6 @@ import { useShopList } from "@/Hook/Data/useShopList";
 import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function MyPage() {
-  useRequireAuth();
-
   const { orderList, orderNumbers } = useMyPage();
   const { shopList, numbers } = useShopList();
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -24,12 +22,14 @@ function MyPage() {
 
   const currentList = activeList === "Order" ? orderList : shopList;
   const currentNumbers = activeList === "Order" ? orderNumbers : numbers;
-  const currentMode = activeList === "Order" ? "Mypage" : "order";
+
+  //* LoginCheck
+  useRequireAuth();
 
   return (
     <>
       <MobileNavBarComponent>
-        {isMobile && <MobileNavbar mode="Base" Title="베스트셀러" />}
+        {isMobile && <MobileNavbar mode="Base" Title="" />}
         {isMobile && <BestSellerMobileBottom />}
       </MobileNavBarComponent>
 
@@ -42,7 +42,7 @@ function MyPage() {
       <Componenet>
         {currentList.length > 0 ? (
           <Product
-            mode={currentMode}
+            mode={activeList === "Order" ? "Mypage" : "order"}
             book={currentList}
             numbers={currentNumbers}
           />

@@ -9,9 +9,9 @@ import MobileNavbar from "../../layout/Mobile/NavBar";
 
 import { useComments } from "./Hook/useComment";
 import FocusSimilarBookSlide from "./focus-SimiralSlide";
-import FocusBookInfo from "./focus-Book/BookInfo";
-import FocusShareBtn from "./focusShareBtn";
-import FocusCommentsComponent from "./focus-comment";
+import FocusBookInfo from "./focus-Book";
+import FocusShareBtn from "./focus-ShareBtn";
+import FocusCommentsComponent from "./focus-Comment";
 import FocusReviewInfo from "./focus-ReviewTrigger";
 import FocusReturn from "./focus-BookReturn";
 import FocusMobileBottom from "./focus-NavBar/Bottom";
@@ -34,14 +34,25 @@ import { useState } from "react";
 import { SortType } from "@/data/supabase";
 
 function FocusPage(props: { params: { slug: string } }) {
-  // ** Modal
-  const [modal] = useRecoilState(OnOffModal);
   const [sorting, setSorting] = useState<SortType>("최신순");
-
+  //* data *
+  //* URL 디코딩 *
+  const decodedString = decodeURIComponent(props.params.slug);
+  //* 데이터 : Book API *
+  const { focusBook } = useBookApi({
+    slug: decodedString,
+  });
+  //* 데이터 : 연관 책 데이터 *
+  const { simiralBook } = useSimiralBookSearch({
+    slug: decodedString,
+  });
+  //* 데이터 : 댓글  *
+  const { Comments } = useComments({ slug: decodedString, sorting });
   const handleSortingChange = (form: string) => {
     setSorting(form as SortType);
   };
-
+  // ** Modal
+  const [modal] = useRecoilState(OnOffModal);
   const MODAL_COMPONENTS: {
     [key: string]: React.FC<{ data: BookDataType }>;
   } = {
@@ -55,7 +66,6 @@ function FocusPage(props: { params: { slug: string } }) {
     ShareModal: ShareModal,
   };
   const FocusModalComponent = MODAL_COMPONENTS[modal.type];
-
   // ** Results Modal */
   const [resultsModal, setResultsModal] = useRecoilState(ResultsModal);
   const RESULTS_MODAL_COMPONENTS: {
@@ -70,19 +80,6 @@ function FocusPage(props: { params: { slug: string } }) {
 
   const FocusResultsModalComponent =
     RESULTS_MODAL_COMPONENTS[resultsModal.type];
-  //* URL 디코딩 *
-  const decodedString = decodeURIComponent(props.params.slug);
-  //* 데이터 : Book API *
-  const { focusBook } = useBookApi({
-    slug: decodedString,
-  });
-  //* 데이터 : 연관 책 데이터 *
-  const { simiralBook } = useSimiralBookSearch({
-    slug: decodedString,
-  });
-  //* 데이터 : 댓글  *
-  const { Comments } = useComments({ slug: decodedString, sorting });
-
   //* Mobile
   const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
 
@@ -92,6 +89,7 @@ function FocusPage(props: { params: { slug: string } }) {
         {isMobile && <MobileNavbar mode="full" Title="베스트셀러" />}
         {isMobile && <FocusMobileBottom data={focusBook} />}
       </NavBarComponent>
+
       <Componenet>
         <FocusBookInfo data={focusBook} />
         <FocusSimilarBookSlide data={simiralBook} name="비슷한 상품 slide" />
@@ -100,11 +98,11 @@ function FocusPage(props: { params: { slug: string } }) {
           productForm={sorting}
           setProductForm={handleSortingChange}
         />
-
         <FocusCommentsComponent props={Comments} />
         <FocusReturn />
         <FocusShareBtn />
       </Componenet>
+
       <ModalComponenet>
         {modal.isOpen && FocusModalComponent && (
           <FocusModalComponent data={focusBook} />

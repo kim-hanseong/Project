@@ -15,8 +15,6 @@ import { ModalStateType, ProductComment } from "@/types";
 interface ReviewInfoProps {
   comments: ProductComment[]; // Comments 배열의 타입을 정의
 }
-const CATEGORY_LIST = [{ title: "최신순" }, { title: "별점순" }];
-
 // FocusReviewInfo 메인 컴포넌트 정의
 const FocusReviewInfo: React.FC<ReviewInfoProps> & {
   Container: React.FC<{ children: React.ReactNode }>;

@@ -5,7 +5,7 @@ import SelectPopButton from "@/components/common/Select";
 
 // import { useResponsive } from "@/Hook/Responsive/useResponsive";
 
-interface BestSellerCategoryProps {
+interface FocusSortingProps {
   productForm: string;
   setProductForm: (form: string) => void;
 }
@@ -16,7 +16,7 @@ const CATEGORY_LIST = [
   { title: "별점낮은순" },
 ];
 
-const FocusCommentSorting: React.FC<BestSellerCategoryProps> = ({
+const FocusCommentSorting: React.FC<FocusSortingProps> = ({
   productForm,
   setProductForm,
 }) => {

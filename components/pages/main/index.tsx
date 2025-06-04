@@ -12,9 +12,7 @@ import MainBestSlide from "./main-best";
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
 
 function MainPage() {
-  const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
-
-  // 베스트셀러 데이터 가져오기
+  //* data *
   const { data, category, setCategory, isLoading } = useBookFetchDataPagenation(
     {
       category: "전체",
@@ -24,13 +22,14 @@ function MainPage() {
     }
   );
   const { orderSales } = useOrderSales();
-
   const handleCategoryChange = useCallback(
     (newCategory: string) => {
       setCategory(newCategory);
     },
     [setCategory]
   );
+  //* Mobile
+  const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
 
   return (
     <>

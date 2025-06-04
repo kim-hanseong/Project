@@ -23,6 +23,7 @@ export default function useOrderSubmitEffect() {
       router.replace("/cart");
     }
   }, [isFetched, shopList]);
+  console.log("shopList", shopList);
 
   // 주문 처리
   const handleSubmit = async (e?: React.FormEvent) => {

@@ -34,27 +34,15 @@ import TopPriceWrap from "@/util/Modal/공용/PriceWrap/DeskTop";
 import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function OrderPage() {
-  useRequireAuth();
+  //* data *
   const { shopList, numbers, isFetched } = useShopList();
   const { address, recentAddress } = useAddressUserInfo();
   const [search, setSearch] = useState("");
-
+  //** modal */
   const [modal] = useRecoilState(OnOffModal);
   const [resultsModal] = useRecoilState(ResultsModal);
   const [addAddress] = useRecoilState(InputAddressModal);
   const [searchaddAddress] = useRecoilState(SearchAddressModal);
-
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!isFetched) return; // 아직 데이터 로드 안 됨
-
-    if (shopList.length === 0) {
-      alert("장바구니에 상품이 없습니다.");
-      router.replace("/cart");
-    }
-  }, [isFetched, shopList]);
-
   const MODAL_COMPONENTS: {
     [key: string]: React.FC<{ address: AddressType[] }>;
   } = {
@@ -71,7 +59,21 @@ function OrderPage() {
   };
   const OrderResultsModalComponent =
     RESULTS_MODAL_COMPONENTS[resultsModal.type];
+
+  useEffect(() => {
+    if (!isFetched) return; // 아직 데이터 로드 안 됨
+
+    if (shopList.length === 0) {
+      alert("장바구니에 상품이 없습니다.");
+      router.replace("/cart");
+    }
+  }, [isFetched, shopList]);
+
   const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
+  const router = useRouter();
+
+  //* LoginCheck
+  useRequireAuth();
 
   return (
     <>

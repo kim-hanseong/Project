@@ -80,22 +80,6 @@ export function useMyPage() {
     }
   }, [orderList]);
 
-  // ✅ orderNumbers → orderList : 수동 호출 함수
-  const syncNumbersToShopList = () => {
-    setShopList((prev) =>
-      prev.map((book) => ({
-        ...book,
-        numbering: orderNumbers[book.title] ?? 1,
-      }))
-    );
-  };
-
-  useEffect(() => {
-    if (Object.keys(orderNumbers).length > 0) {
-      syncNumbersToShopList();
-    }
-  }, [orderNumbers]);
-
   return {
     loading,
     orderList,

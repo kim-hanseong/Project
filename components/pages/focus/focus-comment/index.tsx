@@ -66,7 +66,10 @@ const FocusCommentsComponent: React.FC<UserMatchComponentProps> & {
             <FocusCommentsComponent.Item key={data.id || index}>
               <FocusCommentsComponent.Info>
                 <UserEmail user={data} className={styles.commentInfoText} />
-                <DateTime data={data} className="text-xl md:text-lg" />
+                <DateTime
+                  data={data}
+                  className="hidden md:block text-xl md:text-lg"
+                />
                 <RatingList data={data} className={styles.Rating} />
                 <PopButton
                   value="댓글 수정 / 삭제 버튼"

@@ -230,8 +230,8 @@ const OrderUtill: React.FC<BookWithQuantity> = ({ book, quantity }) => {
   );
 };
 
-const MyPageUtill: React.FC<BookWithQuantity> = ({ book, quantity }) => {
-  const price = useFormatPrice(book.sale_price * quantity);
+const MyPageUtill: React.FC<BookWithQuantity> = ({ book }) => {
+  const price = useFormatPrice(book.sale_price * book.numbering);
 
   return (
     <FlexBox
@@ -245,9 +245,9 @@ const MyPageUtill: React.FC<BookWithQuantity> = ({ book, quantity }) => {
       </span>
       <div
         className={styles.MyPageQuantity}
-        aria-label={`주문 수량: ${quantity}개`}
+        aria-label={`주문 수량: ${book.numbering}개`}
       >
-        수량: {quantity}개
+        수량: {book.numbering}개
       </div>
       <div
         className={`${styles.MyPageDelivery} ${book.delivery ? styles.complete : styles.pending}`}

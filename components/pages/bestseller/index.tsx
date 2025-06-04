@@ -10,11 +10,11 @@ import MobileNavbar from "../../layout/Mobile/NavBar";
 import MobileBottom from "../../layout/Mobile/Bottom";
 
 import useBookFetchDataPagenation from "./Hook/useBestBook";
-import BestSellerProduct from "./bestseller-product";
+import BestSellerProduct from "./bestseller-Product";
 import BestSellerCategor from "./bestseller-Category-Select";
 import BestSellerPagiNation from "./bestseller-PagiNation";
 import BestSellerPageSize from "./bestseller-PageSize";
-import BestSellerFormChange from "./bestseller-form-change-btn";
+import BestSellerFormChange from "./bestseller-Form-change-btn";
 import BestSellerSorting from "./bestseller-Sorting";
 import styles from "./index.module.css";
 
@@ -22,24 +22,9 @@ import useInfiniteScroll from "@/Hook/Event/useInfiniteScroll";
 import ProductShopArlam from "@/util/Modal/ShopModal";
 import SearchModal from "@/util/Modal/Mobile/Search";
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
-//* child components *
+//* data *
 const BestSellerPage: React.FC = () => {
-  //** modal */
-  const [modal] = useRecoilState(OnOffModal);
-  //* Mobile
-  const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
-
-  const MODAL_COMPONENTS: {
-    [key: string]: React.FC;
-  } = {
-    ProductShopExists: ProductShopArlam,
-    ProductShopAdd: ProductShopArlam,
-    MobileSearchModal: SearchModal,
-  };
-  const BestsellerModalComponent = MODAL_COMPONENTS[modal.type];
-
   const [productForm, setProductForm] = useState("Basis");
-
   const {
     data,
     category,
@@ -56,6 +41,19 @@ const BestSellerPage: React.FC = () => {
     pagination: "1",
     sorting: "추천일순",
   });
+  //** modal */
+  const [modal] = useRecoilState(OnOffModal);
+  const MODAL_COMPONENTS: {
+    [key: string]: React.FC;
+  } = {
+    ProductShopExists: ProductShopArlam,
+    ProductShopAdd: ProductShopArlam,
+    MobileSearchModal: SearchModal,
+  };
+  const BestsellerModalComponent = MODAL_COMPONENTS[modal.type];
+
+  //* Mobile
+  const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
 
   const handlePageSizeChange = () => {
     if (parseInt(pageSize) >= 18) {
