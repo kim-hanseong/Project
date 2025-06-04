@@ -11,7 +11,7 @@ import { useComments } from "./Hook/useComment";
 import FocusSimilarBookSlide from "./focus-SimiralSlide";
 import FocusBookInfo from "./focus-Book";
 import FocusShareBtn from "./focus-ShareBtn";
-import FocusCommentsComponent from "./focus-Comment";
+import FocusCommentsComponent from "./focus-comment";
 import FocusReviewInfo from "./focus-ReviewTrigger";
 import FocusReturn from "./focus-BookReturn";
 import FocusMobileBottom from "./focus-NavBar/Bottom";

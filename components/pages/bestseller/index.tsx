@@ -20,8 +20,8 @@ import useInfiniteScroll from "@/Hook/Event/useInfiniteScroll";
 import ProductShopArlam from "@/util/Modal/ShopModal";
 import SearchModal from "@/util/Modal/Mobile/Search";
 import { useMediaQuery } from "@/Hook/Responsive/useMediaQuery";
-import BestSellerProduct from "./bestseller-Product";
-import BestSellerFormChange from "./bestseller-Form-change-btn";
+import BestSellerProduct from "./bestseller-product";
+import BestSellerFormChange from "./bestseller-form-change-btn";
 //* data *
 const BestSellerPage: React.FC = () => {
   const [productForm, setProductForm] = useState("Basis");
