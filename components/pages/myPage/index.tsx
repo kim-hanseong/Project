@@ -29,7 +29,7 @@ function MyPage() {
   return (
     <>
       <MobileNavBarComponent>
-        {isMobile && <MobileNavbar mode="Base" Title="" />}
+        {isMobile && <MobileNavbar mode="Base" Title="마이 페이지" />}
         {isMobile && <BestSellerMobileBottom />}
       </MobileNavBarComponent>
 

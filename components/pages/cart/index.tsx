@@ -15,10 +15,13 @@ import MobilePriceWrap from "@/util/Modal/공용/PriceWrap/Mobile";
 import { useRequireAuth } from "@/Hook/Data/useRequireAuth";
 
 function CartPage() {
+  //* data *
   const { shopList, numbers, handleIncrease, handleDecrease, handleDelete } =
     useShopList();
+  //* Mobile
   const isMobile = useMediaQuery("(max-width: 768px)"); // 👈 모바일 여부 판별
 
+  //* LoginCheck
   useRequireAuth();
 
   return (
